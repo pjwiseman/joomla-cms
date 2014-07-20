@@ -130,6 +130,7 @@ class JEventDispatcher extends JObject
 	public function trigger($event, $args = array())
 	{
 		$result = array();
+		//echo __CLASS__ . ":" . $event . '<br>';
 
 		/*
 		 * If no arguments were passed, we still need to pass an empty array to
@@ -150,6 +151,7 @@ class JEventDispatcher extends JObject
 		foreach ($this->_methods[$event] as $key)
 		{
 			// Check if the plugin is present.
+			//echo __CLASS__ . ":plugins present:" . $key . "<br>";
 			if (!isset($this->_observers[$key]))
 			{
 				continue;
@@ -158,12 +160,14 @@ class JEventDispatcher extends JObject
 			// Fire the event for an object based observer.
 			if (is_object($this->_observers[$key]))
 			{
+				//echo __CLASS__ . ":firing object based observer:" . $this->_observers[$key] . "<br>";
 				$args['event'] = $event;
 				$value = $this->_observers[$key]->update($args);
 			}
 			// Fire the event for a function based observer.
 			elseif (is_array($this->_observers[$key]))
 			{
+				//echo __CLASS__ . ":firing function based observer:" . "<br>";
 				$value = call_user_func_array($this->_observers[$key]['handler'], $args);
 			}
 

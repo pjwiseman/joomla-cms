@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="content">
+	<name>plg_content_extra</name>
+	<author>Joomla! Project</author>
+	<creationDate>November 2005</creationDate>
+	<copyright>Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>admin@joomla.org</authorEmail>
+	<authorUrl>www.joomla.org</authorUrl>
+	<version>0.0.1</version>
+	<description>PLG_EXTRA_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="extra">extra.php</filename>
+		<filename>index.html</filename>
+		<folder>language</folder>
+		<folder>extra</folder>
+	</files>
+	<config>
+		<fields name="params">
+		</fields>
+	</config>
+</extension>

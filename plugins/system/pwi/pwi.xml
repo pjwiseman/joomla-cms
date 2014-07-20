@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="system">
+	<name>plg_system_pwi</name>
+	<author>Peter Wiseman</author>
+	<creationDate>June 2014</creationDate>
+	<copyright>Copyright (C) 2014 Peter Wiseman. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>peter.wiseman@gmail.com</authorEmail>
+	<authorUrl>peterwiseman.blogspot.com.au/</authorUrl>
+	<version>3.0.0</version>
+	<description>Peter's Test Plugin</description>
+	<files>
+		<filename plugin="pwi">pwi.php</filename>
+		<filename>index.html</filename>
+		<folder>language</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_system_pwi.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_system_pwi.sys.ini</language>
+	</languages>
+</extension>

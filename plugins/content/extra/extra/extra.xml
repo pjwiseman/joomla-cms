@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="extra">
+		<fieldset name="fieldset1" label="fieldset label">
+			<field
+				name="field1"
+				type="text"
+				id="field1"
+				description="field1 description"
+				label="field1 label"
+				message="field1 message"
+				size="30"
+			/>
+		</fieldset>
+	</fields>
+</form>
