@@ -28,7 +28,12 @@ class PlgContentExtra extends JPlugin
 	
 	public function onContentPrepareForm($form, $data)
 	{
+		$date = new DateTime();
+		$datestr = $date->format('d-M-y h:m:s');
+
 		JFactory::getApplication()->enqueueMessage(__METHOD__);
+		JFactory::getApplication()->enqueueMessage($datestr);
+		
 		JFactory::getApplication()->enqueueMessage(
 			"Form = <pre>" . var_export($form, true) . "</pre>");
 		JFactory::getApplication()->enqueueMessage(
@@ -42,11 +47,16 @@ class PlgContentExtra extends JPlugin
 	
 	public function onContentPrepareData($context, $data)
 	{
+		$date = new DateTime();
+		$datestr = $date->format('d-M-y h:m:s');
+
 		JFactory::getApplication()->enqueueMessage(__METHOD__);
+		JFactory::getApplication()->enqueueMessage($datestr);
+		
 		JFactory::getApplication()->enqueueMessage(
-		"Context = <pre>" . var_export($context, true) . "</pre>");
+			"Context = <pre>" . var_export($context, true) . "</pre>");
 		JFactory::getApplication()->enqueueMessage(
-		"Data = <pre>" . var_export($data, true) . "</pre>");
+			"Data = <pre>" . var_export($data, true) . "</pre>");
 		
 		//if (!is_object($article)) { return true; }
 		

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <form>
 	<fields name="extra">
-		<fieldset name="fieldset1" label="fieldset label">
+		<fieldset name="extra" label="fieldset label">
 			<field
 				name="field1"
 				type="text"
