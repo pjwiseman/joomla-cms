@@ -28,13 +28,26 @@ class PlgContentExtra extends JPlugin
 	
 	public function onContentPrepareForm($form, $data)
 	{
-		JForm::addFormPath(dirname(__FILE__) . '/extra');
+		JFactory::getApplication()->enqueueMessage(__METHOD__);
+		JFactory::getApplication()->enqueueMessage(
+			"Form = <pre>" . var_export($form, true) . "</pre>");
+		JFactory::getApplication()->enqueueMessage(
+			"Data = <pre>" . var_export($data, true) . "</pre>");
+		
+		JForm::addFormPath(__DIR__ . '/extra');
 		$form->loadFile('extra', false);
+
 		return true;	
 	}
 	
 	public function onContentPrepareData($context, $data)
 	{
+		JFactory::getApplication()->enqueueMessage(__METHOD__);
+		JFactory::getApplication()->enqueueMessage(
+		"Context = <pre>" . var_export($context, true) . "</pre>");
+		JFactory::getApplication()->enqueueMessage(
+		"Data = <pre>" . var_export($data, true) . "</pre>");
+		
 		//if (!is_object($article)) { return true; }
 		
 		$data->extra = array();
@@ -45,16 +58,20 @@ class PlgContentExtra extends JPlugin
 	
 	public function onContentAfterSave($context, &$article, $isNew)
 	{
+		JFactory::getApplication()->enqueueMessage(__METHOD__);
 		
 	}
 	
 	public function onContentAfterDelete($context, $article)
 	{
+		JFactory::getApplication()->enqueueMessage(__METHOD__);
 		
 	}	
 
 	public function onContentPrepare($context, &$article, &$params, $page = 0)
 	{
+		JFactory::getApplication()->enqueueMessage(__METHOD__);
+
 // 		if (!isset($article->extra) || !count($article->extra))
 // 			return;
 	
@@ -91,10 +108,13 @@ class PlgContentExtra extends JPlugin
 		{
 			$extra = "has extra";
 		}
-		$debug = var_export($article, true);
+		
+		JFactory::getApplication()->enqueueMessage(
+			"Context = <pre>" . var_export($context, true) . "</pre>");
+		JFactory::getApplication()->enqueueMessage(
+			"Article = <pre>" . var_export($article, true) . "</pre>");
 		$extra .= '<style>.test {color:red; border: 1px dotted red; }</style>';
 		$extra .= '<div class="test">TEST CONTENT</div>';
-		$extra .= "<pre>$debug</pre>";
 		
 		$article->text =  $extra . $article->text;
 	}
